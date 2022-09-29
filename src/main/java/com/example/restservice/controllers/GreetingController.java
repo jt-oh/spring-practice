@@ -1,4 +1,4 @@
-package com.example.restservice;
+package com.example.restservice.controllers;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.example.restservice.controllers.responses.Greeting;
 
 @Controller
 public class GreetingController {
