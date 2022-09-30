@@ -13,15 +13,12 @@ public class UserController {
   private UserRepository userRepository;
 
   @PostMapping(path="")
-  @ResponseBody
-  public String addNewUser (@RequestParam String name, @RequestParam String email) {
+    public Integer addNewUser (@RequestParam String name, @RequestParam String email) {
+        User user = new User(name, email);
 
-    User n = new User();
-    n.setName(name);
-    n.setEmail(email);
-    userRepository.save(n);
+        User createdUser = userRepository.save(user);
     
-    return "Saved";
+        return createdUser.getId();
   }
 
   @GetMapping(path="")
